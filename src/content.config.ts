@@ -14,12 +14,14 @@ const social = z.object({
   facebook: z.string().optional(),
   github: z.string().optional(),
   instagram: z.string().optional(),
+  kick: z.string().optional(),
   linkedIn: z.string().optional(),
   pinterest: z.string().optional(),
   tiktok: z.string().optional(),
-  website: z.string().optional(),
-  youtube: z.string().optional(),
   twitch: z.string().optional(),
+  website: z.string().optional(),
+  x: z.string().optional(),
+  youtube: z.string().optional(),
 });
 
 const about = defineCollection({
@@ -31,7 +33,7 @@ const about = defineCollection({
     }),
 });
 
-// Re-purposed for Supporters, Mods & Hall of Fame
+// Re-purposed for Creator, Supporters, Mods & Hall of Fame
 const authors = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
@@ -39,7 +41,9 @@ const authors = defineCollection({
   }),
   schema: ({ image }) =>
     searchable.extend({
-      role: z.enum(['Mod', 'VIP', 'Top Supporter', 'Community PR Leader']).default('VIP'),
+      role: z
+        .enum(["Creator", "Mod", "VIP", "Top Supporter", "Community PR Leader"])
+        .default("VIP"),
       email: z.string().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
@@ -56,7 +60,9 @@ const blog = defineCollection({
       image: image().optional(),
       imageAlt: z.string().default(""),
       author: reference("authors").optional(),
-      categories: z.array(z.enum(['Fitness', 'Gaming', 'Mindset', 'Stream Updates'])).optional(),
+      categories: z
+        .array(z.enum(["Fitness", "Gaming", "Mindset", "Stream Updates"]))
+        .optional(),
       tags: z.array(z.string()).optional(),
       complexity: z.number().default(1),
       hideToc: z.boolean().default(false),
