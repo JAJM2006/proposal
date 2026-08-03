@@ -1,7 +1,7 @@
 ---
 title: Hey, I'm Jaden!
 description: this is meta description
-image: "@assets/profile/jane-doe.jpg"
+image: "@assets/profile/jaden-hero.jpg"
 draft: false
 ---
 
