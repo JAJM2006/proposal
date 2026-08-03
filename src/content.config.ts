@@ -36,7 +36,7 @@ const about = defineCollection({
 // Re-purposed for Creator, Supporters, Mods & Hall of Fame
 const authors = defineCollection({
   loader: glob({
-    pattern: "**\/[^_]*.{md,mdx}",
+    pattern: "**/[^_]*.{md,mdx}",
     base: "./src/content/authors",
   }),
   schema: ({ image }) =>
@@ -53,7 +53,7 @@ const authors = defineCollection({
 
 // Main Stream Updates & Blog
 const blog = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
     searchable.extend({
       date: z.date().optional(),
@@ -71,7 +71,7 @@ const blog = defineCollection({
 
 // Stream Vault / Structured Fitness & Setup Guides
 const docs = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/docs" }),
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/docs" }),
   schema: ({ image }) =>
     searchable.extend({
       pubDate: z.date().optional(),
@@ -113,22 +113,11 @@ const indexCards = defineCollection({
   }),
 });
 
-const poetry = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/poetry" }),
-  schema: ({ image }) =>
-    searchable.extend({
-      date: z.date().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
-    }),
-});
-
-// Re-purposed for Social Links Hub
-const portfolio = defineCollection({
+// Re-purposed for Social Links Hub (Renamed from portfolio)
+const links = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
-    base: "./src/content/portfolio",
+    base: "./src/content/links",
   }),
   schema: searchable.extend({
     projects: z.array(
@@ -145,7 +134,7 @@ const portfolio = defineCollection({
 // Cooking with Jaden
 const recipes = defineCollection({
   loader: glob({
-    pattern: "**\/[^_]*.{md,mdx}",
+    pattern: "**/[^_]*.{md,mdx}",
     base: "./src/content/recipes",
   }),
   schema: ({ image }) =>
@@ -182,8 +171,7 @@ export const collections = {
   docs,
   home,
   indexCards,
-  poetry,
-  portfolio,
+  links, // <-- updated export
   recipes,
   terms,
 };
