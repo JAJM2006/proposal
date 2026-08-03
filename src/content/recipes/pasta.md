@@ -3,7 +3,7 @@ title: High-Protein Pasta
 description: Quick 15-minute meal prep packed with lean protein to hit your daily macro goals.
 image: "@assets/recipes/protein-pasta.jpg"
 imageAlt: High-protein pasta bowl
-author: spagetitii
+author: JAJM2006
 prepTime: 10
 servings: 2
 calories: 550
