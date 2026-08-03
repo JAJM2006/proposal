@@ -1,9 +1,6 @@
 import { defineCollection, reference, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-// May also need to update /src/types/index.d.ts when updating this file
-// When updating the set of searchable collections, update collectionList in /src/pages/search.astro
-
 const searchable = z.object({
   title: z.string(),
   description: z.string().optional(),
@@ -22,6 +19,7 @@ const social = z.object({
   tiktok: z.string().optional(),
   website: z.string().optional(),
   youtube: z.string().optional(),
+  twitch: z.string().optional(),
 });
 
 const about = defineCollection({
@@ -33,6 +31,7 @@ const about = defineCollection({
     }),
 });
 
+// Re-purposed for Supporters, Mods & Hall of Fame
 const authors = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
@@ -40,6 +39,7 @@ const authors = defineCollection({
   }),
   schema: ({ image }) =>
     searchable.extend({
+      role: z.enum(['Mod', 'VIP', 'Top Supporter', 'Community PR Leader']).default('VIP'),
       email: z.string().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
@@ -47,6 +47,7 @@ const authors = defineCollection({
     }),
 });
 
+// Main Stream Updates & Blog
 const blog = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
   schema: ({ image }) =>
@@ -55,13 +56,14 @@ const blog = defineCollection({
       image: image().optional(),
       imageAlt: z.string().default(""),
       author: reference("authors").optional(),
-      categories: z.array(z.string()).optional(),
+      categories: z.array(z.enum(['Fitness', 'Gaming', 'Mindset', 'Stream Updates'])).optional(),
       tags: z.array(z.string()).optional(),
       complexity: z.number().default(1),
       hideToc: z.boolean().default(false),
     }),
 });
 
+// Stream Vault / Structured Fitness & Setup Guides
 const docs = defineCollection({
   loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/docs" }),
   schema: ({ image }) =>
@@ -92,6 +94,7 @@ const home = defineCollection({
     }),
 });
 
+// Re-purposed for Mindset Notes & Daily Quotes
 const indexCards = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
@@ -115,6 +118,7 @@ const poetry = defineCollection({
     }),
 });
 
+// Re-purposed for Social Links Hub
 const portfolio = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
@@ -124,7 +128,7 @@ const portfolio = defineCollection({
     projects: z.array(
       z.object({
         title: z.string(),
-        github: z.string().optional(),
+        link: z.string().optional(),
         technologies: z.array(z.string()).optional(),
         content: z.array(z.string()).optional(),
       }),
@@ -132,6 +136,7 @@ const portfolio = defineCollection({
   }),
 });
 
+// Cooking with Jaden
 const recipes = defineCollection({
   loader: glob({
     pattern: "**\/[^_]*.{md,mdx}",
@@ -145,6 +150,8 @@ const recipes = defineCollection({
       author: reference("authors").optional(),
       prepTime: z.number().optional(),
       servings: z.number().optional(),
+      calories: z.number().optional(),
+      protein: z.string().optional(),
       diet: z.string().optional(),
       ingredients: z
         .object({
@@ -162,7 +169,6 @@ const terms = defineCollection({
   schema: searchable,
 });
 
-// Export collections
 export const collections = {
   about,
   authors,
