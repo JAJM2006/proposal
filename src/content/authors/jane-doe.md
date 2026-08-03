@@ -1,11 +1,15 @@
 ---
-title: Jane Doe
-email: janedoe@email.com
-image: "@assets/profile/jane-doe.jpg"
+title: Jaden (spagetitii)
+role: Creator
+email: contact@spagetitii.com
+image: "@assets/profile/jaden-profile.jpg"
+imageAlt: spagetitii portrait
 social:
-  github: "https://github.com/"
-  linkedIn: "https://www.linkedin.com/"
-  email: "janedoe@janedoe.com"
+  discord: "https://discord.spagetitii.com"
+  youtube: "https://yt.spagetitii.com"
+  instagram: "https://ig.spagetitii.com"
+  tiktok: "https://tt.spagetitii.com"
+  twitch: "https://www.twitch.tv/spagetitii"
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+Fitness enthusiast, gamer, and community builder. I share workout routines, high-protein recipes, setup guides, and stream updates right here.
