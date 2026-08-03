@@ -2,7 +2,7 @@
 title: Jaden (spagetitii)
 role: Creator
 email: contact@spagetitii.com
-image: "@assets/profile/jaden-profile.jpg"
+image: "@assets/profile/jaden-profile.png"
 imageAlt: spagetitii portrait
 social:
   discord: "https://discord.spagetitii.com"
