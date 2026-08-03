@@ -1,5 +1,5 @@
 ---
-title: Portfolio
+title: Links
 description: Jane Doe's projects and programs.
 
 projects:
