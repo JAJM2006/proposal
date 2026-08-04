@@ -40,7 +40,7 @@ spagetitii
 | **`yt.spagetitii.com`** | YouTube Channel | Chat command (`!yt`) |
 | **`ig.spagetitii.com`** | Instagram Profile | Bio link & chat command (`!ig`) |
 | **`tt.spagetitii.com`** | TikTok Profile | Bio link & chat command (`!tt`) |
-| **`testing.spagetitii.com`** | Website Portal | Live website staging & blog |
+| **`www.spagetitii.com`** | Website Portal | Live website staging & blog |
 
 ---
 ## NOTES
@@ -48,14 +48,15 @@ spagetitii
 ```
 Please be careful with what you click on, when on the cloudflare dashboard. The account is linked to my card and therefore any charges made will go to my bank account. While I do not mind paying for the domain, just be careful not to turn on something that requires upcharges.
 ```
+
 ---
 
 ## Next Steps Checklist
 
 - [ ] Change the Cloudflare account password on first login.
-- [ ] Test your links in a browser (`spagetitii.com`, `discord.spagetitii.com`, `testing.spagetitii.com`).
+- [ ] Test your links in a browser (`spagetitii.com`, `discord.spagetitii.com`, `www.spagetitii.com`).
 - [ ] Update your Twitch panels and bot commands (`!discord`, `!yt`, `!ig`, `!tt`).
 - [ ] Confirm where you want `mail@spagetitii.com` routed (e.g., your personal Gmail).
 
 ---
-*For support or tweaks, contact me (**JAJM2006**).*
+*For support or tweaks, contact me (**JAJM2006**).* 
