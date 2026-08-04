@@ -1,24 +1,68 @@
 ---
-import type { Hall-of-fameEntry } from "@/types";
-import BaseLayout from "@components/base/BaseLayout.astro";
-import PageHeader from "@components/common/PageHeader.astro";
-import AuthorCard from "@components/hall-of-fame/Card.astro";
+import DynamicIcon from "@components/DynamicIcon";
+import ImageMod from "@components/ImageMod.astro";
+import Pagination from "@components/Pagination.astro";
+import { humanize, slugify } from "@lib/textConverter";
 
-interface Props {
-  authorIndex: Hall-of-fameEntry;
-  entries: Hall-of-fameEntry[];
-}
-
-const { authorIndex, entries } = Astro.props;
+const { title, description, entries, currentPage, totalPages } = Astro.props;
 ---
 
-<BaseLayout title={authorIndex.data.title} description={authorIndex.data.description}>
-  <PageHeader title={authorIndex.data.title} />
-  <section class="section-sm pb-0">
-    <div class="container">
-      <div class="row justify-center">
-        {entries.map((entry) => <AuthorCard entry={entry} />)}
-      </div>
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h1 class="h2 mb-4">{title}</h1>
+      {description && <p class="text-lg text-text-light dark:text-darkmode-text-light">{description}</p>}
     </div>
-  </section>
-</BaseLayout>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        entries.map((entry: any) => (
+          <div class="bg-body dark:bg-darkmode-body p-6 rounded-lg border border-border dark:border-darkmode-border flex flex-col items-center text-center">
+            {entry.data.image && (
+              <ImageMod
+                src={entry.data.image}
+                alt={entry.data.imageAlt || entry.data.title}
+                width={120}
+                height={120}
+                class="rounded-full mb-4 object-cover w-30 h-30"
+              />
+            )}
+            <h3 class="h4 mb-2">
+              <a href={`/hall-of-fame/${entry.id}`} class="hover:text-primary">
+                {entry.data.title}
+              </a>
+            </h3>
+            {entry.data.role && (
+              <span class="inline-block bg-theme-light dark:bg-darkmode-theme-light text-primary px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                {entry.data.role}
+              </span>
+            )}
+            {entry.body && <p class="text-sm mb-4 line-clamp-3">{entry.body}</p>}
+
+            {entry.data.social && (
+              <ul class="flex space-x-3 mt-auto">
+                {Object.entries(entry.data.social).map(([key, value]) => {
+                  if (!value) return null;
+                  return (
+                    <li>
+                      <a
+                        href={key === "email" ? `mailto:${value}` : (value as string)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-text-light hover:text-primary dark:text-darkmode-text-light"
+                      >
+                        <DynamicIcon icon={humanize(key)} class="w-5 h-5" />
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+        ))
+      }
+    </div>
+
+    <Pagination currentPage={currentPage} totalPages={totalPages} section="hall-of-fame" />
+  </div>
+</section>
