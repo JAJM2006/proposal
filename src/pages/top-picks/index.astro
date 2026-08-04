@@ -1,11 +1,11 @@
 ---
-import CollectionLayout from "@components/Top-Picks/CollectionLayout.astro";
+import CollectionLayout from "@components/top-picks/CollectionLayout.astro";
 import { getIndex, getGroups } from "@lib/contentParser";
-import type { Top-PicksEntry } from "@/types";
+import type { DocsEntry } from "@/types"; // or TopPicksEntry if defined without a hyphen in types
 import { sortByTitle } from "@lib/sortFunctions";
 
-const collectionIndex = (await getIndex("Top-Picks")) as Top-PicksEntry;
-const groupIndices = (await getGroups("Top-Picks", sortByTitle)) as Top-PicksEntry[];
+const collectionIndex = (await getIndex("topPicks")) as DocsEntry;
+const groupIndices = (await getGroups("topPicks", sortByTitle)) as DocsEntry[];
 ---
 
 <CollectionLayout entries={groupIndices} collectionIndex={collectionIndex} />
