@@ -12,6 +12,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: "https://www.spagetitii.com",
   base: "/",
+  output: "static",
   trailingSlash: "ignore",
   prefetch: {
     prefetchAll: true
