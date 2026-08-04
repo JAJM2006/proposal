@@ -6,7 +6,6 @@ export type GenericEntry = CollectionEntry<CollectionKey>;
 export type AboutEntry = CollectionEntry<"about">;
 export type Hall-of-fameEntry = CollectionEntry<"hall-of-fame">;
 export type vaultEntry = CollectionEntry<"vault">;
-export type DocsEntry = CollectionEntry<"docs">;
 export type HomeEntry = CollectionEntry<"home">;
 export type QuotesEntry = CollectionEntry<"quotes">;
 export type PoetryEntry = CollectionEntry<"poetry">;
@@ -19,7 +18,6 @@ export type SearchableEntry =
   | AboutEntry
   | Hall-of-fameEntry
   | vaultEntry
-  | DocsEntry
   | PoetryEntry
   | LinksEntry
   | RecipesEntry
