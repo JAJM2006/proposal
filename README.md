@@ -1,4 +1,4 @@
-# Welcome to spagetitii.com!
+# Welcome to [www.spagetitii.com](https://www.spagetitii.com)!
 
 Welcome to your website dashboard and repo! Everything is set up, prerendered, and live.
 
