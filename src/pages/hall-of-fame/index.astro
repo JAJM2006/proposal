@@ -1,12 +1,12 @@
 ---
-import type { Hall-of-fameEntry } from "@/types";
-import CollectionLayout from "@components/hall-of-fame/CollectionLayout.astro";
+import type { HallofFameEntry } from "@/types";
+import CollectionLayout from "@components/halloffame/CollectionLayout.astro";
 import { getEntries } from "@lib/contentParser";
 import { getIndex } from "@lib/contentParser";
 import { sortByTitle } from "@lib/sortFunctions";
 
-const authorIndex = await getIndex("hall-of-fame") as Hall-of-fameEntry;
-const entries = await getEntries("hall-of-fame", sortByTitle) as Hall-of-fameEntry[];
+const authorIndex = await getIndex("halloffame") as HallofFameEntry;
+const entries = await getEntries("halloffame", sortByTitle) as HallofFameEntry[];
 ---
 
 <CollectionLayout authorIndex={authorIndex} entries={entries} />

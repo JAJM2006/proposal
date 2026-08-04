@@ -33,11 +33,11 @@ const about = defineCollection({
     }),
 });
 
-// Hall of Fame (Formerly hall-of-fame)
+// Hall of Fame (Formerly halloffame)
 const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/hall-of-fame",
+    base: "./src/content/halloffame",
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -182,7 +182,7 @@ const terms = defineCollection({
 
 export const collections = {
   about,
-  hallOfFame, // <-- renamed from hall-of-fame
+  hallOfFame, // <-- renamed from halloffame
   vault,      // <-- renamed from blog
   home,
   quotes,     // <-- renamed from indexCards

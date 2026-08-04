@@ -4,10 +4,10 @@ import Social from "@components/common/Social.astro";
 import BaseLayout from "@components/base/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { render } from "astro:content";
-import type { Hall-of-fameEntry, vaultEntry } from "@/types";
+import type { HallofFameEntry, vaultEntry } from "@/types";
 
 interface Props {
-  entry: Hall-of-fameEntry;
+  entry: HallofFameEntry;
   recentvaultEntries: vaultEntry[];
 }
 

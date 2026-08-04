@@ -1,12 +1,12 @@
 ---
-import type { Hall-of-fameEntry } from "@/types";
+import type { HallofFameEntry } from "@/types";
 import BaseLayout from "@components/base/BaseLayout.astro";
 import PageHeader from "@components/common/PageHeader.astro";
-import AuthorCard from "@components/hall-of-fame/Card.astro";
+import AuthorCard from "@components/halloffame/Card.astro";
 
 interface Props {
-  authorIndex: Hall-of-fameEntry;
-  entries: Hall-of-fameEntry[];
+  authorIndex: HallofFameEntry;
+  entries: HallofFameEntry[];
 }
 
 const { authorIndex, entries } = Astro.props;
