@@ -133,11 +133,25 @@ const baseUrl = "https://www.spagetitii.com";
   </head>
   <body>
     <Background />
-    <Header />
-    <main id="main-content" class="flex-1">
-      <slot/>
-    </main>
-    <Footer />
+    <div data-pagefind-ignore>
+      <Header />
+    </div>
+    
+    {
+      noindex ? (
+        <main id="main-content" class="flex-1" data-pagefind-ignore>
+          <slot />
+        </main>
+      ) : (
+        <main id="main-content" class="flex-1" data-pagefind-body>
+          <slot />
+        </main>
+      )
+    }
+
+    <div data-pagefind-ignore>
+      <Footer />
+    </div>
     <!-- <ObserverScript /> -->
   </body>
 </html>
