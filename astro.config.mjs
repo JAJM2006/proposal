@@ -27,14 +27,7 @@ export default defineConfig({
       babel: false
     }),
     sitemap(),
-    mdx({
-      remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
-        remarkMath
-      ],
-      rehypePlugins: [[rehypeKatex, {}]]
-    })
+    mdx()
   ],
   markdown: {
     remarkPlugins: [
