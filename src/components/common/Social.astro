@@ -29,20 +29,7 @@ const iconClass =
 {
   links && (
     <ul class="py-2 flex items-center">
-      {links.discord && (
-        <li class={liClass}>
-          <a
-            class={iconClass}
-            aria-label="Discord"
-            href={links.discord}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            <span class="sr-only">Discord</span>
-            <FaDiscord className="w-6 h-6" />
-          </a>
-        </li>
-      )}
+      {/* 1. TWITCH FIRST */}
       {links.twitch && (
         <li class={liClass}>
           <a
@@ -57,6 +44,24 @@ const iconClass =
           </a>
         </li>
       )}
+
+      {/* 2. DISCORD */}
+      {links.discord && (
+        <li class={liClass}>
+          <a
+            class={iconClass}
+            aria-label="Discord"
+            href={links.discord}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <span class="sr-only">Discord</span>
+            <FaDiscord className="w-6 h-6" />
+          </a>
+        </li>
+      )}
+
+      {/* 3. INSTAGRAM */}
       {links.instagram && (
         <li class={liClass}>
           <a
@@ -71,6 +76,8 @@ const iconClass =
           </a>
         </li>
       )}
+
+      {/* 4. YOUTUBE */}
       {links.youtube && (
         <li class={liClass}>
           <a
@@ -85,6 +92,7 @@ const iconClass =
           </a>
         </li>
       )}
+
       {links.email && (
         <li class={liClass}>
           <a
