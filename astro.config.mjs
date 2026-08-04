@@ -19,14 +19,22 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
     platformProxy: {
-      enabled: true,
-      configPath: "wrangler.json"
+      enabled: true
     }
   }),
   integrations: [
-    react(),
+    react({
+      babel: false
+    }),
     sitemap(),
-    mdx()
+    mdx({
+      remarkPlugins: [
+        remarkToc,
+        [remarkCollapse, { test: "Table of contents" }],
+        remarkMath
+      ],
+      rehypePlugins: [[rehypeKatex, {}]]
+    })
   ],
   markdown: {
     remarkPlugins: [
