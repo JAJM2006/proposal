@@ -26,7 +26,7 @@ const pageDescription = description || collectionIndex?.data?.description;
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {
           entries?.map((entry: any) => (
-            <div class="bg-body dark:bg-darkmode-body p-6 rounded-lg border border-border dark:border-darkmode-border flex flex-col items-center text-center">
+            <div class="glass p-6 rounded-lg border border-border dark:border-darkmode-border flex flex-col items-center text-center">
               {entry.data.image && (
                 <Image
                   src={entry.data.image}
