@@ -34,7 +34,7 @@ const about = defineCollection({
 });
 
 // Hall of Fame
-const hall-of-fame = defineCollection({
+const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
     base: "./src/content/hall-of-fame",
@@ -59,7 +59,7 @@ const vault = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("hall-of-fame").optional(),
+      author: reference("hallOfFame").optional(),
       categories: z
         .array(
           z.enum([
@@ -158,7 +158,7 @@ const recipes = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("hall-of-fame").optional(),
+      author: reference("hallOfFame").optional(),
       prepTime: z.number().optional(),
       servings: z.number().optional(),
       calories: z.number().optional(),
@@ -182,7 +182,7 @@ const terms = defineCollection({
 
 export const collections = {
   about,
-  hall-of-fame,
+  hallOfFame,
   vault,
   home,
   quotes,
