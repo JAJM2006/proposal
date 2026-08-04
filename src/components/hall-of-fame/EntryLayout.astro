@@ -41,7 +41,7 @@ const { title, role, image, imageAlt, social, description } = entry.data;
           {
             entry.body && (
               <div
-                class="content text-left glass p-8 rounded-lg border border-border dark:border-darkmode-border mb-12 prose-p:text-txt-s prose-p:dark:text-darkmode-txt-s"
+                class="content text-left glass p-8 rounded-lg border border-border dark:border-darkmode-border mb-12"
                 set:html={markdownify(entry.body)}
               />
             )
