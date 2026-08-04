@@ -1,62 +1,32 @@
-# `spagetitii.com` ~ Handover and Quick-Start Guide
+# Welcome to spagetitii.com!
 
-Welcome to your official custom domain, shortlinks, and website ecosystem! Everything has been configured, secured, and simplified by **Joshua (AKA JAJM2006)**.
-
-Use the quick links below to navigate through your setup guides and administrative details.
+Welcome to your website dashboard and repo! Everything is set up, prerendered, and live.
 
 ---
 
-## Documentation & Guides
+## Quick Links & Dashboards
 
-* **[Domain Management & Shortlinks Guide](./docs/DOMAIN_GUIDE.md)**  
-  *Active shortlinks (`!discord`, `!yt`), Cloudflare account details, and email routing setup.*
-
-* **[Website Editing & Customization Guide](./docs/WEBSITE_GUIDE.md)**  
-  *How to write blog posts, customize dark/light theme colors, update page copy, and tweak styles.*
-
----
-```text
-spagetitii
-├── docs/                      # Setup & administration guides
-│   ├── DOMAIN_GUIDE.md
-│   └── WEBSITE_GUIDE.md
-├── src/                       # Website source code
-│   ├── components/            # Header, Footer, and UI blocks
-│   ├── content/               # Blog posts & clips (.md / .mdx files)
-│   ├── pages/                 # Website pages (Home, About, Blog)
-│   ├── styles/                # CSS themes & global styling
-│   └── consts.ts              # Site title & description settings
-└── README.md                  # This document
-```
+* **Live Website:** [www.spagetitii.com](https://www.spagetitii.com)
+* **Cloudflare Dashboard:** [dash.cloudflare.com](https://dash.cloudflare.com)
+* **Editing Guides:** [View Documentation & Guides Folder](./docs/)
 
 ---
 
-## Quick Links Reference
+## Important Cloudflare Note
 
-| Link | Destination | Use Case |
-| :--- | :--- | :--- |
-| **`spagetitii.com`** | Twitch Stream | Overlays, primary social bios |
-| **`discord.spagetitii.com`** | Discord Server | Chat command (`!discord`) |
-| **`yt.spagetitii.com`** | YouTube Channel | Chat command (`!yt`) |
-| **`ig.spagetitii.com`** | Instagram Profile | Bio link & chat command (`!ig`) |
-| **`tt.spagetitii.com`** | TikTok Profile | Bio link & chat command (`!tt`) |
-| **`www.spagetitii.com`** | Website Portal | Live website staging & blog |
-
----
-## NOTES
-
-```
-Please be careful with what you click on, when on the cloudflare dashboard. The account is linked to my card and therefore any charges made will go to my bank account. While I do not mind paying for the domain, just be careful not to turn on something that requires upcharges.
-```
+> **Please be careful when navigating the Cloudflare Dashboard!**  
+> The Cloudflare account is linked to Joshua's personal card[cite: 1]. Any paid add-ons or upcharges will be billed to his bank account[cite: 1]. Feel free to manage your settings, but **please do not toggle on features that require additional monthly fees or upcharges**[cite: 1].
 
 ---
 
-## Next Steps Checklist
+## 📖 Guides & Documentation
 
-- [ ] Change the Cloudflare account password on first login.
-- [ ] Test your links in a browser (`spagetitii.com`, `discord.spagetitii.com`, `www.spagetitii.com`).
-- [ ] Update your Twitch panels and bot commands (`!discord`, `!yt`, `!ig`, `!tt`).
-- [ ] Confirm where you want `mail@spagetitii.com` routed (e.g., your personal Gmail).
+Need to add a recipe, post a vault article, or check domain links? Head over to the **[`docs/`](./docs/)** directory:
+
+1. **[Website Editing & Content Guide](./docs/WEBSITE_GUIDE.md)** — How to write new recipes, add vault entries, and upload photos using GitHub[cite: 1].
+2. **[Domain Management & Shortlinks Guide](./docs/DOMAIN_GUIDE.md)** — Info on subdomains (`!discord`, `!yt`), active domain routing, and Cloudflare account basics[cite: 1].
+3. **[Technical Architecture & Tech Stack](./docs/tech-stack.md)** — Deep-dive details on Astro, Tailwind, and website structure[cite: 3, 4].
 
 ---
-*For support or tweaks, contact me (**JAJM2006**).* 
+
+*Maintained by **JAJM2006 (Joshua)**[cite: 1]. Reach out if you ever need help or custom updates![cite: 1]*
