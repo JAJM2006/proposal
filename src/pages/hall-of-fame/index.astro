@@ -1,10 +1,10 @@
 ---
 import CollectionLayout from "@components/hall-of-fame/CollectionLayout.astro";
-import { getIndex, getGroups } from "@lib/contentParser";
+import { getIndex, getEntries } from "@lib/contentParser";
 import { sortByTitle } from "@lib/sortFunctions";
 
 const collectionIndex = await getIndex("hall-of-fame");
-const groupIndices = await getGroups("hall-of-fame", sortByTitle);
+const entries = await getEntries("hall-of-fame", sortByTitle);
 ---
 
-<CollectionLayout entries={groupIndices} collectionIndex={collectionIndex} />
+<CollectionLayout entries={entries} collectionIndex={collectionIndex} />
