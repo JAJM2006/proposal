@@ -2,7 +2,7 @@
 title: 
 description:
 image: "@assets/profile/<image>.jpg"
-draft: false
+draft:
 ---
 
 [PLACEHOLDER TEXT. PLEASE REPLACE}
