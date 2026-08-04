@@ -1,5 +1,5 @@
 ---
-title: Documentation
-description: This is the docs
+title: Recommendations
+description: This is the Top Picks
 draft: false
 ---
