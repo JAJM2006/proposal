@@ -56,7 +56,7 @@
 <details>
 <summary><b>How to add Recipes</b></summary>
 
-1. Copy the [Recipe Template](https://github.com/JAJM2006/spagetitii/templates/recipes).
+1. Copy the [Recipe Template](https://github.com/JAJM2006/spagetitii/blob/main/templates/recipes.md).
 2. Navigate to [/src/content/recipes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/recipes).
 3. Click **Add file** ➔ **Create new file**.
 4. Name the file using kebab-case (e.g., `pesto-pasta.md`).
@@ -64,7 +64,7 @@
 6. Click **Commit changes...**
 
 > **To add an image to a recipe:**
-> 1. Go to the [recipe assets page](https://github.com/JAJM2006/spagetitii/blob/main/templates/recipes.md).
+> 1. Go to the [recipe assets page](https://github.com/JAJM2006/spagetitii/tree/main/src/assets/recipes).
 > 2. Upload your photo and note the filename.
 > 3. Open your recipe file in [/src/content/recipes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/recipes).
 > 4. Click the **Pencil** button and update the image path: `[@assets/profile/<old-file>]` ➔ `[@assets/profile/<new-file>]`.
@@ -82,7 +82,7 @@
 <details>
 <summary><b>How to add someone to the Hall of Fame</b></summary>
 
-1. Copy the [Hall of Fame Template](https://github.com/JAJM2006/spagetitii/templates/hall-of-fame).
+1. Copy the [Hall of Fame Template](https://github.com/JAJM2006/spagetitii/blob/main/templates/hall-of-fame.md)
 2. Navigate to [/src/content/hall-of-fame](https://github.com/JAJM2006/spagetitii/tree/main/src/content/hall-of-fame).
 3. Click **Add file** ➔ **Create new file**.
 4. Name the file after the person (e.g., `jaden.md`).
