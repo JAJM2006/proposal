@@ -118,25 +118,13 @@ const home = defineCollection({
 // Mindset Notes & Daily Quotes
 const quotes = defineCollection({
   loader: glob({
-    pattern: "-index.{md,mdx}",
-    base: "./src/content/quotes",
-  }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    cards: z.array(z.string()),
-  }),
-});
-
-// Index Cards (Used by quotes.astro)
-const quotes = defineCollection({
-  loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/index-cards",
+    base: "./src/content/quotes",
   }),
   schema: z.object({
     title: z.string().optional(),
     description: z.string().optional(),
+    cards: z.array(z.string()).optional(),
   }).passthrough(),
 });
 
@@ -195,12 +183,13 @@ const terms = defineCollection({
 export const collections = {
   about,
   "hall-of-fame": hallOfFame,
+  hallOfFame,
   vault,
   home,
-  quotes,
   quotes,
   links,
   recipes,
   "top-picks": topPicks,
+  topPicks,
   terms,
 };
