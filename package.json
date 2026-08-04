@@ -12,15 +12,13 @@
     "format": "prettier -w ./src"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.4",
-    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/mdx": "^7.0.5",
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.5.0",
-    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@radix-ui/react-scroll-area": "^1.1.0",
-    "astro": "^5.13.2",
-    "astro-auto-import": "^0.4.2",
+    "astro": "^7.1.6",
     "astro-tooltips": "^0.6.2",
     "clsx": "^2.1.1",
     "date-fns": "^2.30.0",
@@ -41,8 +39,8 @@
     "remark-collapse": "^0.1.2",
     "remark-math": "^6.0.0",
     "remark-toc": "^8.0.1",
-    "sharp": "^0.32.4",
-    "swiper": "^10.1.0",
+    "sharp": "^0.35.3",
+    "swiper": "^14.0.7",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
@@ -69,9 +67,8 @@
     "@parcel/watcher@2.5.1": true,
     "sharp@0.33.5": true,
     "sharp@0.32.6": true,
-    "esbuild@0.25.9": true,
-    "esbuild@0.25.4": true,
     "fsevents@2.3.3": true,
-    "workerd@1.20250813.0": true
+    "workerd@1.20260730.1": true,
+    "esbuild@0.28.1": true
   }
 }
