@@ -64,5 +64,14 @@
     "tailwindcss": "^3.3.3",
     "typescript": "5.1.6",
     "wrangler": "^4.24.0"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.1": true,
+    "sharp@0.33.5": true,
+    "sharp@0.32.6": true,
+    "esbuild@0.25.9": true,
+    "esbuild@0.25.4": true,
+    "fsevents@2.3.3": true,
+    "workerd@1.20250813.0": true
   }
 }
