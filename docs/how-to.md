@@ -1,73 +1,104 @@
-# Quick cheat sheet — short & fast
+# Quick Cheat Sheet
 
-A compact reference for fast edits using the GitHub web UI.
+<details>
+<summary><b>How to edit the Homepage</b></summary>
 
-Common quick flow (all content)
-1. Open the template (if present) and copy its contents.
-2. Go to the target folder under src/content (paths below).
-3. Click Add file → Create new file (or open the existing file to edit).
-4. Paste the template (or edit) and fill in frontmatter/fields.
-5. Upload any required images to src/assets/ (see notes).
-6. Commit directly if you have permission, or create a branch and open a PR.
-7. Wait for the site to build/deploy (check Actions if needed).
+1. Open [-index.md](https://github.com/JAJM2006/spagetitii/tree/main/src/content/home/-index.md).
+2. Click the **Pencil** button (Edit).
+3. Update the content.
+4. Click **Commit changes...**
 
-Per-area cheats
+> **To update the homepage image:**
+> 1. Go to the [assets folder](https://github.com/JAJM2006/spagetitii/tree/main/src/assets/profile).
+> 2. Upload your new photo and note the filename (e.g., `jaden-profile.png`).
+> 3. Go back to [-index.md](https://github.com/JAJM2006/spagetitii/tree/main/src/content/home/-index.md) and click the **Pencil** button.
+> 4. Change `[@assets/profile/<old-file>]` to `[@assets/profile/<new-file>]`.
+</details>
 
-- Homepage
-  1) Open/copy: src/content/home/-index.md
-  2) Edit that single file (or replace content)
-  3) Upload images to src/assets/ if needed
-  4) Commit and wait
+<details>
+<summary><b>How to edit the About Page</b></summary>
 
-- About
-  1) Open/copy: src/content/about/-index.md
-  2) Edit content or replace with template
-  3) Upload images to src/assets/ if needed
-  4) Commit and wait
+1. Open [-index.md](https://github.com/JAJM2006/spagetitii/tree/main/src/content/about/-index.md).
+2. Click the **Pencil** button (Edit).
+3. Update the content.
+4. Click **Commit changes...**
 
-- Top Picks
-  1) Find an example in src/content/top-picks/ (or templates there)
-  2) Copy its template or file
-  3) Create a new file under src/content/top-picks/<your-file>.md in the same subfolder structure
-  4) Ensure frontmatter includes the correct image path and link fields
-  5) Upload images to src/assets/top-picks/ and reference the exact filename
-  6) Commit and wait
+> **To update the about image:**
+> 1. Go to the [assets folder](https://github.com/JAJM2006/spagetitii/tree/main/src/assets/profile).
+> 2. Upload your new photo and note the filename (e.g., `jaden-profile.png`).
+> 3. Go back to [-index.md](https://github.com/JAJM2006/spagetitii/tree/main/src/content/about/-index.md) and click the **Pencil** button.
+> 4. Change `[@assets/profile/<old-file>]` to `[@assets/profile/<new-file>]`.
+</details>
 
-- Vault
-  1) Copy VAULT TEMPLATE from src/content/templates or src/content/vault/
-  2) Create src/content/vault/<your-file>.md and paste the template
-  3) Fill fields and commit
+<details>
+<summary><b>How to add to Top Picks</b></summary>
 
-- Recipies (note spelling: "recipies")
-  1) Open RECIPIES TEMPLATE in src/content/recipies/templates or copy an existing recipe
-  2) Create src/content/recipies/<your-recipe>.md
-  3) Paste template, fill title/date/tags/image/frontmatter
-  4) Upload images to src/assets/recipies/ and reference exact path in frontmatter
-  5) Commit and wait
+1. Copy the [Top Picks Template](https://github.com/JAJM2006/spagetitii/templates/top-picks).
+2. Navigate to [/src/content/top-picks](https://github.com/JAJM2006/spagetitii/tree/main/src/content/top-picks).
+3. Choose the appropriate category folder (*Books & Guides*, *Movies & TV shows*, or *Music & Podcasts*).
+4. Click **Add file** ➔ **Create new file**.
+5. Name the file using kebab-case (e.g., `hunger-games.md`).
+6. Paste and fill out the template.
+7. Click **Commit changes...**
+</details>
 
-- Quotes
-  Pattern A — one-file-per-quote:
-    1) Create src/content/quotes/<date>-quote.md with minimal frontmatter (title, date)
-    2) Add the quote text and commit
-  Pattern B — single file:
-    1) Edit the existing quotes file (e.g., src/content/quotes.md) and add your quote in the same format
-  Tip: follow the pattern already present in the repo
+<details>
+<summary><b>How to add to The Vault</b></summary>
 
-- Hall of Fame
-  1) Copy an example from src/content/hall-of-fame/ (or templates)
-  2) Create src/content/hall-of-fame/<your-entry>.md and fill fields
-  3) IMPORTANT: upload the person’s photo to src/assets/profile/ and reference that exact filename in the frontmatter
-  4) Commit and wait
+1. Copy the [Vault Template](https://github.com/JAJM2006/spagetitii/templates/vault).
+2. Navigate to [/src/content/vault](https://github.com/JAJM2006/spagetitii/tree/main/src/content/vault).
+3. Click **Add file** ➔ **Create new file**.
+4. Name the file using kebab-case (e.g., `kissing-the-homies.md`).
+5. Paste and fill out the template.
+6. Click **Commit changes...**
+</details>
 
-- Links
-  1) Inspect how links are stored (folder vs single file) in src/content/links/ or similar
-  2) Follow the existing pattern; add a new file or edit the links file accordingly
-  3) Commit and wait
+<details>
+<summary><b>How to add Recipes</b></summary>
 
-Special notes
-- Always copy frontmatter exactly from a working example in the repo — field names matter.
-- Use the exact folder names (e.g., "recipies") — spelling and path must match the site’s expectations.
-- For Top Picks and Hall of Fame, put images in the expected assets subfolder (top-picks or profile) and reference exact filenames.
-- If you can’t push to default, create a branch on commit and open a PR; request @JAJM2006 as reviewer if needed.
+1. Copy the [Recipe Template](https://github.com/JAJM2006/spagetitii/templates/recipes).
+2. Navigate to [/src/content/recipes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/recipes).
+3. Click **Add file** ➔ **Create new file**.
+4. Name the file using kebab-case (e.g., `pesto-pasta.md`).
+5. Paste and fill out the template.
+6. Click **Commit changes...**
 
-Want me to replace docs/how-to.md with this cheat sheet (I can commit it), or create docs/cheat-sheet.md and leave the original file intact?
+> **To add an image to a recipe:**
+> 1. Go to the [recipe assets page](https://github.com/JAJM2006/spagetitii/tree/main/src/assets/recipes).
+> 2. Upload your photo and note the filename.
+> 3. Open your recipe file in [/src/content/recipes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/recipes).
+> 4. Click the **Pencil** button and update the image path: `[@assets/profile/<old-file>]` ➔ `[@assets/profile/<new-file>]`.
+</details>
+
+<details>
+<summary><b>How to add a Quote of the Day</b></summary>
+
+1. Copy the [Quotes Template](https://github.com/JAJM2006/spagetitii/templates/quotes).
+2. Navigate to [/src/content/quotes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/quotes).
+3. Click **Add file** ➔ **Create new file**.
+4. Name the file something recognizable (e.g., `inspirational-quote.md`).
+5. Paste and fill out the template.
+6. Click **Commit changes...**
+</details>
+
+<details>
+<summary><b>How to add someone to the Hall of Fame</b></summary>
+
+1. Copy the [Hall of Fame Template](https://github.com/JAJM2006/spagetitii/templates/hall-of-fame).
+2. Navigate to [/src/content/hall-of-fame](https://github.com/JAJM2006/spagetitii/tree/main/src/content/hall-of-fame).
+3. Click **Add file** ➔ **Create new file**.
+4. Name the file after the person (e.g., `jaden.md`).
+5. Paste and fill out the template, then commit.
+6. Upload their picture to the [profile assets page](https://github.com/JAJM2006/spagetitii/tree/main/src/assets/profile) and copy the filename (e.g., `jaden-profile.png`).
+7. Re-open your newly created file in [hall-of-fame](https://github.com/JAJM2006/spagetitii/tree/main/src/content/hall-of-fame), click the **Pencil** button, and update the image path: `[@assets/profile/<old-file>]` ➔ `[@assets/profile/<new-file>]`.
+8. Click **Commit changes...**
+</details>
+
+<details>
+<summary><b>How to edit the Links Page</b></summary>
+
+1. Open [-index.md](https://github.com/JAJM2006/spagetitii/tree/main/src/content/links/-index.md).
+2. Click the **Pencil** button (Edit).
+3. Update the body of the file.
+4. Click **Commit changes...**
+</details>
