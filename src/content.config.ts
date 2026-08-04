@@ -37,7 +37,7 @@ const about = defineCollection({
 const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/halloffame",
+    base: "./src/content/hall-of-fame", // Fixed: Added hyphen to match physical folder
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -182,12 +182,12 @@ const terms = defineCollection({
 
 export const collections = {
   about,
-  hallOfFame, // <-- renamed from halloffame
-  vault,      // <-- renamed from blog
+  hallOfFame,
+  vault,
   home,
-  quotes,     // <-- renamed from indexCards
+  quotes,
   links,
   recipes,
-  topPicks,   // <-- renamed from docs
+  topPicks,
   terms,
 };

@@ -1,12 +1,15 @@
 ---
-import type { HallofFameEntry } from "@/types";
-import CollectionLayout from "@components/halloffame/CollectionLayout.astro";
-import { getEntries } from "@lib/contentParser";
-import { getIndex } from "@lib/contentParser";
+// Change this:
+// import CollectionLayout from "@components/halloffame/CollectionLayout.astro";
+
+// To this:
+import CollectionLayout from "@components/hall-of-fame/CollectionLayout.astro";
+import { getIndex, getGroups } from "@lib/contentParser";
 import { sortByTitle } from "@lib/sortFunctions";
 
-const authorIndex = await getIndex("halloffame") as HallofFameEntry;
-const entries = await getEntries("halloffame", sortByTitle) as HallofFameEntry[];
+// Ensure your collection parser uses camelCase or your exact key:
+const collectionIndex = await getIndex("hallOfFame");
+const groupIndices = await getGroups("hallOfFame", sortByTitle);
 ---
 
-<CollectionLayout authorIndex={authorIndex} entries={entries} />
+<CollectionLayout entries={groupIndices} collectionIndex={collectionIndex} />
