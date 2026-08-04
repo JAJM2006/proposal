@@ -2,12 +2,12 @@
 import BaseLayout from "@components/base/BaseLayout.astro";
 import PageHeader from "@components/common/PageHeader.astro";
 import { upperHumanize } from "@lib/textConverter";
-import BlogCard from "@components/blog/Card.astro";
-import type { BlogEntry } from "@/types";
+import vaultCard from "@components/vault/Card.astro";
+import type { vaultEntry } from "@/types";
 
 interface Props {
   taxon: string;
-  entries: BlogEntry[];
+  entries: vaultEntry[];
 }
 
 const { taxon, entries }: Props = Astro.props;
@@ -22,7 +22,7 @@ const { taxon, entries }: Props = Astro.props;
           {
             entries.map((entry) => (
               <div class="py-2 md:py-4 md:col-6">
-                <BlogCard entry={entry} />
+                <vaultCard entry={entry} />
               </div>
             ))
           }

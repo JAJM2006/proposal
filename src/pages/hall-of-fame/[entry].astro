@@ -1,5 +1,5 @@
 ---
-import type { AuthorsEntry, BlogEntry } from "@/types";
+import type { AuthorsEntry, vaultEntry } from "@/types";
 import EntryLayout from "@components/authors/EntryLayout.astro";
 import { slugify } from "@lib/textConverter";
 import { getEntries } from "@lib/contentParser";
@@ -18,12 +18,12 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { title } = entry.data;
-const blogEntries = (await getEntries("blog", sortByDate)) as BlogEntry[];
-const filteredBlogEntries = blogEntries.filter(
-  (entry: BlogEntry) =>
+const vaultEntries = (await getEntries("vault", sortByDate)) as vaultEntry[];
+const filteredvaultEntries = vaultEntries.filter(
+  (entry: vaultEntry) =>
     slugify(entry.data.author?.id ? entry.data.author.id : "Jane Doe") ===
     slugify(title)
 );
 ---
 
-<EntryLayout entry={entry} recentBlogEntries={filteredBlogEntries} />
+<EntryLayout entry={entry} recentvaultEntries={filteredvaultEntries} />

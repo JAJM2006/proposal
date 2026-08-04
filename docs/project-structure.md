@@ -20,13 +20,13 @@
 ## src/
 
 - This folder holds all of your site's source code, plus some other stuff.
-- `assets/` is where you put all images that will be displayed on the site. Preferably, don't dump every image right in there, make subdirectories. For example, if you keep the blog content collection, make a folder `blog`, and put any images your blog uses in there. Even make one subdirectory per blog post.
+- `assets/` is where you put all images that will be displayed on the site. Preferably, don't dump every image right in there, make subdirectories. For example, if you keep the vault content collection, make a folder `vault`, and put any images your vault uses in there. Even make one subdirectory per vault post.
 - `content/` is where all your content collections live.
   - For uniformity, a collection is defined for each "original content" driven page on the website, even if it's a solitary piece of content, such as the `terms` or `about` page.
   - The data type for each content collection is defined in `/src/content/config.ts`. It will need to be updated if you want to edit the schema of a collection or add a new collection altogether.
   - Once development is pretty much done on your site and you're happy with how everything looks and is structured, the expectation is that you will rarely need to interact with anything outside of this folder (and `assets`).
 - `pages/` contains all the pages.
-  - The structure of this folder defines the routing structure for your site. So if in the `pages` folder you have `blog/categories/index.astro`, you will have that page `index.astro` located at `example.com/blog/categories`.
+  - The structure of this folder defines the routing structure for your site. So if in the `pages` folder you have `vault/categories/index.astro`, you will have that page `index.astro` located at `example.com/vault/categories`.
   - The Docs collection actually breaks this rule, because its content is 2 layers deep. I implemented a workaround so the docs pages follow the structure of the `content/docs/` folder.
   - The following are artificial constraints made to give a bit more structure and predictability to the astro code:
     - Each file in `pages/` will directly reference exactly one page **layout**, and no other components.
@@ -51,7 +51,7 @@
 - `favicon/` should hold the various forms of your favicon (different devices and contexts will prefer different versions). [Favicon.io](https://favicon.io/) is a great generator for simple favicons.
 - `fonts/` holds the actual font files that all text on your site will be displayed in.
   - Use the [Google Webfonts Helper](https://gwfh.mranftl.com/fonts) to download your fonts. You do not want to be downloading/importing more files than you actually need, so make sure you don't. There's more details here, but I will be happy to help if you need.
-- Important note: Whenever you reference an image within the project, the root directory for it is assumed by Astro to be `public`. That means, for example, if you're writing a blog post and want to pull in an image `apple.png`, you'd reference it by just `"@assets/blog/apple.png"`, or whichever subdirectory you put it in.
+- Important note: Whenever you reference an image within the project, the root directory for it is assumed by Astro to be `public`. That means, for example, if you're writing a vault post and want to pull in an image `apple.png`, you'd reference it by just `"@assets/vault/apple.png"`, or whichever subdirectory you put it in.
 - `CNAME` must hold the value `www.yourdomain.com`. Without going into detail, this is necessary to link your domain to the site, and get all the necessary certificates set up.
 - `robots.txt` generally directs web-crawling bots. This one doesn't specify much, but it's fine how it is.
 - `.htaccess` is also probably fine to be left as is.

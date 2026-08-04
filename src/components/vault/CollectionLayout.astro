@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "@components/base/BaseLayout.astro";
-import BlogCard from "@components/blog/Card.astro";
+import vaultCard from "@components/vault/Card.astro";
 import Pagination from "@components/common/Pagination.astro";
 import PageHeader from "@components/common/PageHeader.astro";
-import BlogSidebar from "@components/blog/Sidebar.astro";
-import type { BlogEntry } from "@/types";
+import BlogSidebar from "@components/vault/Sidebar.astro";
+import type { vaultEntry } from "@/types";
 
 interface Props {
-  entryIndex: BlogEntry;
-  entries: BlogEntry[];
+  entryIndex: vaultEntry;
+  entries: vaultEntry[];
   tags: string[];
   categories: string[];
   allCategories: string[];
@@ -42,7 +42,7 @@ const {
             ))
           }
           <Pagination
-            collection="blog"
+            collection="vault"
             pageIndex={pageIndex}
             pageCount={pageCount}
           />
@@ -51,7 +51,7 @@ const {
         <div
           class="hidden lg:col-4 lg:flex max-h-static_sidemenu sticky p-0 pl-4 top-[4rem]"
         >
-          <BlogSidebar
+          <vaultSidebar
             tags={tags}
             categories={categories}
             allCategories={allCategories}

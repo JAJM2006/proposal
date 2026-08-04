@@ -10,7 +10,7 @@ The written content in the template's collections was AI generated. The images a
 
 The idea of a **Content Collection** is one of Astro's most central features. A content collection is a structured way to store and retrieve content for your site. Each collection consists of one or multiple **Entries**, which, in this site, are stored in a Markdown (md, mdx) format. At the top of any of these entry files, you will find **frontmatter**. This is space designed to hold any metadata you want to add, such as an entry's publication date, author, or whatever you want.
 
-Adding an entry to a collection is as simple as creating a new file in the appropriate directory under `/src/content/`. For example, to add a new blog post on Bumble Bees, you would create a new file `/src/content/blog/bumble-bees.md`, and add all the necessary frontmatter. Then you can start plugging away in markdown. This is all very easy, and it's one of the best features of Astro. You can focus on writing content rather than worrying about the underlying code.
+Adding an entry to a collection is as simple as creating a new file in the appropriate directory under `/src/content/`. For example, to add a new vault post on Bumble Bees, you would create a new file `/src/content/vault/bumble-bees.md`, and add all the necessary frontmatter. Then you can start plugging away in markdown. This is all very easy, and it's one of the best features of Astro. You can focus on writing content rather than worrying about the underlying code.
 
 Things get a little more complicated when you want to create a new collection (or update an existing one). Here's a brief overview of how to do that. For examples, look at one of the dozen ways each of these steps are already implemented in this template.
 
@@ -243,7 +243,7 @@ I think these animations make a big difference in the feel of the site, but they
 
 The "Related Entries" section is a feature that automatically populates a list of links to other entries in the same collection. This is not a dedicated component, but just a small section of code that can be added to any entry layout.
 
-By default in this template, there only example of this is in blog entries: `/src/components/blog/EntryLayout.astro`. You'll notice an array of entries called `relatedEntries` is is precomputed for each entry, and passed into the EntryLayout from the calling file: `/src/pages/blog/[entry].astro`. Here you'll see the `relatedEntries` array is populated by the function in `/src/lib/similarItems.ts`, where the logic actually sits.
+By default in this template, there only example of this is in vault entries: `/src/components/vault/EntryLayout.astro`. You'll notice an array of entries called `relatedEntries` is is precomputed for each entry, and passed into the EntryLayout from the calling file: `/src/pages/vault/[entry].astro`. Here you'll see the `relatedEntries` array is populated by the function in `/src/lib/similarItems.ts`, where the logic actually sits.
 
 The way `similarItems.ts` calculates what items are similar is just by reference to whatever metadata elements you choose to include in the comparison. In this template, that includes just the Categories and Tags. So if you want to add this Related Entries section to a content collection with other taxonomies, such as Diet for a recipe collection, you would want to update the `similarItems.ts` file to account for that.
 
@@ -282,7 +282,7 @@ The max length of the description is set in `/src/components/search/Search.tsx`.
 
 ## Pagination
 
-Pagination refers to the process of dividing a large set of entries into smaller chunks or "pages". By default you can see this at work with the blog entries, where the `/blog` page will show a limited number of entries per page, and provide links to subsequent pages. This feature is fancier than it might seem, which is to say, adding it to a collection is not as easy as it seems like it should be.
+Pagination refers to the process of dividing a large set of entries into smaller chunks or "pages". By default you can see this at work with the vault entries, where the `/vault` page will show a limited number of entries per page, and provide links to subsequent pages. This feature is fancier than it might seem, which is to say, adding it to a collection is not as easy as it seems like it should be.
 
 Because each page of entries is, well, a page, you'll need to include a file `/src/pages/[collection]/page/[slug].astro`. This file will handle the routing for the pagination, and should look very similar to `/src/pages/[collection]/index.astro`. Of course, both will call that collection's `CollectionLayout` component. The pagination logic is handled by the `getIndex()` function in `/src/lib/pagination.ts`, which will return a slice of entries for the current page, as well as the total number of pages.
 
