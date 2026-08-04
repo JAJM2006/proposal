@@ -51,9 +51,9 @@ const authors = defineCollection({
     }),
 });
 
-// Main Stream Updates & Blog
-const blog = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/blog" }),
+// Stream Vault & Original Content (Formerly blog)
+const vault = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/vault" }),
   schema: ({ image }) =>
     searchable.extend({
       date: z.date().optional(),
@@ -61,7 +61,15 @@ const blog = defineCollection({
       imageAlt: z.string().default(""),
       author: reference("authors").optional(),
       categories: z
-        .array(z.enum(["Fitness", "Gaming", "Mindset", "Stream Updates"]))
+        .array(
+          z.enum([
+            "Fitness",
+            "Gaming",
+            "Mindset",
+            "Stream Updates",
+            "Stream Clips",
+          ])
+        )
         .optional(),
       tags: z.array(z.string()).optional(),
       complexity: z.number().default(1),
@@ -69,9 +77,12 @@ const blog = defineCollection({
     }),
 });
 
-// Recommendations
-const docs = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/docs" }),
+// Top Picks / Curated Recommendations (Formerly docs)
+const topPicks = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/top-picks",
+  }),
   schema: ({ image }) =>
     searchable.extend({
       pubDate: z.date().optional(),
@@ -79,9 +90,9 @@ const docs = defineCollection({
       image: image().optional(),
       imageAlt: z.string().default(""),
       category: z
-        .enum(["Books", "Videos & Clips", "Fitness Guides", "TV & Movies", "Music & Podcasts"])
+        .enum(["Books & Guides", "Movies & TV", "Music & Podcasts"])
         .optional(),
-      externalUrl: z.string().url().optional(), // For YouTube videos, articles, or book purchase links
+      externalUrl: z.string().url().optional(), // For YouTube videos, Spotify playlists, or book purchase links
       hideToc: z.boolean().default(false),
       hideNav: z.boolean().default(false),
     }),
@@ -172,11 +183,11 @@ const terms = defineCollection({
 export const collections = {
   about,
   authors,
-  blog,
-  docs,
+  vault,     // <-- Updated collection name
   home,
   indexCards,
   links,
   recipes,
+  topPicks,  // <-- Updated collection name
   terms,
 };
