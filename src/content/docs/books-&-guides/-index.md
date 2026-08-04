@@ -1,5 +1,5 @@
 ---
-title: "Books & Personal Development"
+title: "Books & Guides
 description: "The reads that reshaped my mindset, daily discipline, and approach to growth."
 ---
 
