@@ -10,6 +10,7 @@ import {
   FaLinkedin,
   FaPinterest,
   FaTiktok,
+  FaTwitch,
   FaGlobe,
   FaYoutube,
 } from "react-icons/fa";
@@ -39,6 +40,48 @@ const iconClass =
           >
             <span class="sr-only">Discord</span>
             <FaDiscord className="w-6 h-6" />
+          </a>
+        </li>
+      )}
+      {links.twitch && (
+        <li class={liClass}>
+          <a
+            class={iconClass}
+            aria-label="Twitch"
+            href={links.twitch}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <span class="sr-only">Twitch</span>
+            <FaTwitch className="w-6 h-6" />
+          </a>
+        </li>
+      )}
+      {links.instagram && (
+        <li class={liClass}>
+          <a
+            class={iconClass}
+            aria-label="Instagram"
+            href={links.instagram}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <span class="sr-only">Instagram</span>
+            <FaInstagram className="w-6 h-6" />
+          </a>
+        </li>
+      )}
+      {links.youtube && (
+        <li class={liClass}>
+          <a
+            class={iconClass}
+            aria-label="YouTube"
+            href={links.youtube}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
+            <span class="sr-only">YouTube</span>
+            <FaYoutube className="w-6 h-6" />
           </a>
         </li>
       )}
@@ -81,20 +124,6 @@ const iconClass =
           >
             <span class="sr-only">GitHub</span>
             <FaGithub className="w-6 h-6" />
-          </a>
-        </li>
-      )}
-      {links.instagram && (
-        <li class={liClass}>
-          <a
-            class={iconClass}
-            aria-label="Instagram"
-            href={links.instagram}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            <span class="sr-only">Instagram</span>
-            <FaInstagram className="w-6 h-6" />
           </a>
         </li>
       )}
@@ -151,20 +180,6 @@ const iconClass =
           >
             <span class="sr-only">Website</span>
             <FaGlobe className="w-6 h-6" />
-          </a>
-        </li>
-      )}
-      {links.youtube && (
-        <li class={liClass}>
-          <a
-            class={iconClass}
-            aria-label="YouTube"
-            href={links.youtube}
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-          >
-            <span class="sr-only">YouTube</span>
-            <FaYoutube className="w-6 h-6" />
           </a>
         </li>
       )}
