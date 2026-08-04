@@ -1,4 +1,4 @@
-# Guides innit. 
+# Guides innit. The How-To guide tells you the easiest way to upload content.
 
 Self explanatory. Anyway, here is a tree.
 
