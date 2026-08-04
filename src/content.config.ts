@@ -69,7 +69,7 @@ const blog = defineCollection({
     }),
 });
 
-// Stream Vault / Structured Fitness & Setup Guides
+// Recommendations
 const docs = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/docs" }),
   schema: ({ image }) =>
@@ -78,6 +78,10 @@ const docs = defineCollection({
       modDate: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
+      category: z
+        .enum(["Books", "Videos & Clips", "Fitness Guides", "TV & Movies", "Music & Podcasts"])
+        .optional(),
+      externalUrl: z.string().url().optional(), // For YouTube videos, articles, or book purchase links
       hideToc: z.boolean().default(false),
       hideNav: z.boolean().default(false),
     }),
