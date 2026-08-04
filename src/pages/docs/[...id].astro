@@ -1,12 +1,12 @@
 ---
 import type { DocsEntry, MenuItem } from "@/types";
-import EntryLayout from "@components/docs/EntryLayout.astro";
-import CollectionLayout from "@components/docs/CollectionLayout.astro";
+import EntryLayout from "@components/Top-Picks/EntryLayout.astro";
+import CollectionLayout from "@components/Top-Picks/CollectionLayout.astro";
 import { getEntries, getEntriesInGroup, getGroups } from "@lib/contentParser";
 import { sortByTitle } from "@lib/sortFunctions";
 
 export async function getStaticPaths() {
-  const entries = (await getEntries("docs", sortByTitle)) as DocsEntry[];
+  const entries = (await getEntries("docs", sortByTitle)) as Top-PicksEntry[];
 
   const paths = entries.map((entry) => {
     const segments = entry.id.replace("/-index", "").split("/");
@@ -30,19 +30,19 @@ export async function getStaticPaths() {
 const { entry, isGroup } = Astro.props;
 const groupName = entry.id.replace("/-index", "");
 const groupEntries = isGroup
-  ? ((await getEntriesInGroup("docs", groupName, sortByTitle)) as DocsEntry[])
+  ? ((await getEntriesInGroup("Top-Picks", groupName, sortByTitle)) as Top-PicksEntry[])
   : [];
 
 // Construct Doc Browser menu
 const browserMenu: MenuItem[] = [];
-const groups = (await getGroups("docs", sortByTitle)) as DocsEntry[];
+const groups = (await getGroups("Top-Picks", sortByTitle)) as Top-PicksEntry[];
 await Promise.all(
   groups.map(async (group) => {
     const groupEntries = (await getEntriesInGroup(
-      "docs",
+      "Top-Picks",
       group.id.replace("/-index", ""),
       sortByTitle
-    )) as DocsEntry[];
+    )) as Top-PicksEntry[];
     browserMenu.push({
       title: group.data.title,
       id: group.id.replace("/-index", ""),
