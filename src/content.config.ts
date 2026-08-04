@@ -33,11 +33,11 @@ const about = defineCollection({
     }),
 });
 
-// Re-purposed for Creator, Supporters, Mods & Hall of Fame
-const authors = defineCollection({
+// Hall of Fame (Formerly authors)
+const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/authors",
+    base: "./src/content/hall-of-fame",
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -59,7 +59,7 @@ const vault = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
+      author: reference("hallOfFame").optional(),
       categories: z
         .array(
           z.enum([
@@ -92,7 +92,7 @@ const topPicks = defineCollection({
       category: z
         .enum(["Books & Guides", "Movies & TV", "Music & Podcasts"])
         .optional(),
-      externalUrl: z.string().url().optional(), // For YouTube videos, Spotify playlists, or book purchase links
+      externalUrl: z.string().url().optional(),
       hideToc: z.boolean().default(false),
       hideNav: z.boolean().default(false),
     }),
@@ -115,11 +115,11 @@ const home = defineCollection({
     }),
 });
 
-// Re-purposed for Mindset Notes & Daily Quotes
-const indexCards = defineCollection({
+// Mindset Notes & Daily Quotes (Formerly indexCards)
+const quotes = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
-    base: "./src/content/index-cards",
+    base: "./src/content/quotes",
   }),
   schema: z.object({
     title: z.string(),
@@ -128,7 +128,7 @@ const indexCards = defineCollection({
   }),
 });
 
-// Re-purposed for Social Links Hub
+// Social Links Hub
 const links = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
@@ -158,7 +158,7 @@ const recipes = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("authors").optional(),
+      author: reference("hallOfFame").optional(),
       prepTime: z.number().optional(),
       servings: z.number().optional(),
       calories: z.number().optional(),
@@ -182,12 +182,12 @@ const terms = defineCollection({
 
 export const collections = {
   about,
-  authors,
-  vault,     // <-- Updated collection name
+  hallOfFame, // <-- renamed from authors
+  vault,      // <-- renamed from blog
   home,
-  indexCards,
+  quotes,     // <-- renamed from indexCards
   links,
   recipes,
-  topPicks,  // <-- Updated collection name
+  topPicks,   // <-- renamed from docs
   terms,
 };
