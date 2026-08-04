@@ -1,51 +1,64 @@
 ---
+import BaseLayout from "@components/base/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Pagination from "@components/common/Pagination.astro";
 import Social from "@components/common/Social.astro";
 
-const { title, description, entries, currentPage, totalPages } = Astro.props;
+const { title, description, entries, currentPage, totalPages, collectionIndex } = Astro.props;
+
+// Fallback values if collectionIndex is provided
+const pageTitle = title || collectionIndex?.data?.title || "Hall of Fame";
+const pageDescription = description || collectionIndex?.data?.description;
 ---
 
-<section class="section">
-  <div class="container">
-    <div class="text-center mb-12">
-      <h1 class="h2 mb-4">{title}</h1>
-      {description && <p class="text-lg text-text-light dark:text-darkmode-text-light">{description}</p>}
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h1 class="h2 mb-4">{pageTitle}</h1>
+        {pageDescription && (
+          <p class="text-lg text-text-light dark:text-darkmode-text-light">
+            {pageDescription}
+          </p>
+        )}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          entries?.map((entry: any) => (
+            <div class="bg-body dark:bg-darkmode-body p-6 rounded-lg border border-border dark:border-darkmode-border flex flex-col items-center text-center">
+              {entry.data.image && (
+                <Image
+                  src={entry.data.image}
+                  alt={entry.data.imageAlt || entry.data.title}
+                  width={120}
+                  height={120}
+                  class="rounded-full mb-4 object-cover w-30 h-30"
+                />
+              )}
+              <h3 class="h4 mb-2">
+                <a href={`/hall-of-fame/${entry.id}`} class="hover:text-primary">
+                  {entry.data.title}
+                </a>
+              </h3>
+              {entry.data.role && (
+                <span class="inline-block bg-theme-light dark:bg-darkmode-theme-light text-primary px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                  {entry.data.role}
+                </span>
+              )}
+              {entry.body && <p class="text-sm mb-4 line-clamp-3">{entry.body}</p>}
+
+              {entry.data.social && (
+                <Social source={entry.data.social} className="social-icons flex space-x-3 mt-auto" />
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      {totalPages && totalPages > 1 && (
+        <Pagination currentPage={currentPage} totalPages={totalPages} section="hall-of-fame" />
+      )}
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {
-        entries.map((entry: any) => (
-          <div class="bg-body dark:bg-darkmode-body p-6 rounded-lg border border-border dark:border-darkmode-border flex flex-col items-center text-center">
-            {entry.data.image && (
-              <Image
-                src={entry.data.image}
-                alt={entry.data.imageAlt || entry.data.title}
-                width={120}
-                height={120}
-                class="rounded-full mb-4 object-cover w-30 h-30"
-              />
-            )}
-            <h3 class="h4 mb-2">
-              <a href={`/hall-of-fame/${entry.id}`} class="hover:text-primary">
-                {entry.data.title}
-              </a>
-            </h3>
-            {entry.data.role && (
-              <span class="inline-block bg-theme-light dark:bg-darkmode-theme-light text-primary px-3 py-1 rounded-full text-sm font-semibold mb-3">
-                {entry.data.role}
-              </span>
-            )}
-            {entry.body && <p class="text-sm mb-4 line-clamp-3">{entry.body}</p>}
-
-            {entry.data.social && (
-              <Social source={entry.data.social} className="social-icons flex space-x-3 mt-auto" />
-            )}
-          </div>
-        ))
-      }
-    </div>
-
-    <Pagination currentPage={currentPage} totalPages={totalPages} section="hall-of-fame" />
-  </div>
-</section>
+  </section>
+</BaseLayout>
