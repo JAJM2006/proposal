@@ -23,9 +23,9 @@ Welcome to your website dashboard and repo! Everything is set up, prerendered, a
 
 Need to add a recipe, post a vault article, or check domain links? Head over to the **[`docs/`](./docs/)** directory:
 
-1. **[Website Editing & Content Guide](./docs/WEBSITE_GUIDE.md)** — How to write new recipes, add vault entries, and upload photos using GitHub.
-2. **[Domain Management & Shortlinks Guide](./docs/DOMAIN_GUIDE.md)** — Info on subdomains (`!discord`, `!yt`), active domain routing, and Cloudflare account basics.
-3. **[Technical Architecture & Tech Stack](./docs/tech-stack.md)** — Deep-dive details on Astro, Tailwind, and website structure.
+1. **[Website Editing & Content Guide](./docs/content.md)** — How to write new recipes, add vault entries, and upload photos using GitHub.
+2. **[Domain Management & Shortlinks Guide](./docs/domains.md)** — Info on subdomains (`!discord`, `!yt`), active domain routing, and Cloudflare account basics.
+3. **[Technical Architecture & Tech Stack](./docs/tech.md)** — Deep-dive details on Astro, Tailwind, and website structure.
 
 ---
 
