@@ -33,11 +33,11 @@ const about = defineCollection({
     }),
 });
 
-// Hall of Fame (Formerly halloffame)
+// Hall of Fame
 const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/halloffame", // Fixed: Added hyphen to match physical folder
+    base: "./src/content/hall-of-fame",
   }),
   schema: ({ image }) =>
     searchable.extend({
@@ -51,7 +51,7 @@ const hallOfFame = defineCollection({
     }),
 });
 
-// Stream Vault & Original Content (Formerly blog)
+// Stream Vault & Original Content
 const vault = defineCollection({
   loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/vault" }),
   schema: ({ image }) =>
@@ -77,7 +77,7 @@ const vault = defineCollection({
     }),
 });
 
-// Top Picks / Curated Recommendations (Formerly docs)
+// Top Picks / Curated Recommendations
 const topPicks = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
@@ -115,7 +115,7 @@ const home = defineCollection({
     }),
 });
 
-// Mindset Notes & Daily Quotes (Formerly indexCards)
+// Mindset Notes & Daily Quotes
 const quotes = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
