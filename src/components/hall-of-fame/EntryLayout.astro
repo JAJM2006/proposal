@@ -1,15 +1,15 @@
 ---
-import DynamicIcon from "@components/DynamicIcon";
 import ImageMod from "@components/ImageMod.astro";
 import BaseLayout from "@components/base/BaseLayout.astro";
-import { humanize, markdownify } from "@lib/textConverter";
+import Social from "@components/common/Social.astro";
 import Card from "@components/vault/Card.astro";
+import { markdownify } from "@lib/textConverter";
 
 const { entry, recentvaultEntries } = Astro.props;
-const { title, role, email, image, imageAlt, social, description } = entry.data;
+const { title, role, image, imageAlt, social, description } = entry.data;
 ---
 
-<Base title={title} description={description || entry.body}>
+<BaseLayout title={title} description={description || entry.body}>
   <section class="section">
     <div class="container">
       <div class="row justify-center">
@@ -34,27 +34,9 @@ const { title, role, email, image, imageAlt, social, description } = entry.data;
             )
           }
 
-          {
-            social && (
-              <ul class="flex justify-center space-x-4 mb-8">
-                {Object.entries(social).map(([key, value]) => {
-                  if (!value) return null;
-                  return (
-                    <li>
-                      <a
-                        href={key === "email" ? `mailto:${value}` : (value as string)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-text-light hover:text-primary dark:text-darkmode-text-light"
-                      >
-                        <DynamicIcon icon={humanize(key)} class="w-6 h-6" />
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            )
-          }
+          {social && (
+            <Social source={social} className="social-icons flex justify-center space-x-4 mb-8" />
+          )}
 
           {
             entry.body && (
@@ -81,4 +63,4 @@ const { title, role, email, image, imageAlt, social, description } = entry.data;
       }
     </div>
   </section>
-</Base>
+</BaseLayout>

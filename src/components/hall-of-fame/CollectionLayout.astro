@@ -1,8 +1,7 @@
 ---
-import DynamicIcon from "@components/DynamicIcon";
-import ImageMod from "@components/ImageMod.astro";
+import { Image } from "astro:assets";
 import Pagination from "@components/Pagination.astro";
-import { humanize, slugify } from "@lib/textConverter";
+import Social from "@components/common/Social.astro";
 
 const { title, description, entries, currentPage, totalPages } = Astro.props;
 ---
@@ -19,7 +18,7 @@ const { title, description, entries, currentPage, totalPages } = Astro.props;
         entries.map((entry: any) => (
           <div class="bg-body dark:bg-darkmode-body p-6 rounded-lg border border-border dark:border-darkmode-border flex flex-col items-center text-center">
             {entry.data.image && (
-              <ImageMod
+              <Image
                 src={entry.data.image}
                 alt={entry.data.imageAlt || entry.data.title}
                 width={120}
@@ -40,23 +39,7 @@ const { title, description, entries, currentPage, totalPages } = Astro.props;
             {entry.body && <p class="text-sm mb-4 line-clamp-3">{entry.body}</p>}
 
             {entry.data.social && (
-              <ul class="flex space-x-3 mt-auto">
-                {Object.entries(entry.data.social).map(([key, value]) => {
-                  if (!value) return null;
-                  return (
-                    <li>
-                      <a
-                        href={key === "email" ? `mailto:${value}` : (value as string)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-text-light hover:text-primary dark:text-darkmode-text-light"
-                      >
-                        <DynamicIcon icon={humanize(key)} class="w-5 h-5" />
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
+              <Social source={entry.data.social} className="social-icons flex space-x-3 mt-auto" />
             )}
           </div>
         ))
