@@ -1,4 +1,4 @@
-# How to Add Content (A Zero-Code Guide)
+# How to Add Content (A Zero-Code Guide) - [`src/`](../src/) directory:
 
 > **No code, no software, no terminal required!**
 > You can do 100% of your site updates right in your web browser on GitHub.com.
