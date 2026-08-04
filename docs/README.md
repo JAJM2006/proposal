@@ -33,7 +33,7 @@
 <details>
 <summary><b>How to add to Top Picks</b></summary>
 
-1. Copy the [Top Picks Template](https://github.com/JAJM2006/spagetitii/templates/top-picks).
+1. Copy the [Top Picks Template](https://github.com/JAJM2006/spagetitii/blob/main/templates/top-picks.md).
 2. Navigate to [/src/content/top-picks](https://github.com/JAJM2006/spagetitii/tree/main/src/content/top-picks).
 3. Choose the appropriate category folder (*Books & Guides*, *Movies & TV shows*, or *Music & Podcasts*).
 4. Click **Add file** ➔ **Create new file**.
@@ -45,7 +45,7 @@
 <details>
 <summary><b>How to add to The Vault</b></summary>
 
-1. Copy the [Vault Template](https://github.com/JAJM2006/spagetitii/templates/vault).
+1. Copy the [Vault Template](https://github.com/JAJM2006/spagetitii/blob/main/templates/vault.md).
 2. Navigate to [/src/content/vault](https://github.com/JAJM2006/spagetitii/tree/main/src/content/vault).
 3. Click **Add file** ➔ **Create new file**.
 4. Name the file using kebab-case (e.g., `kissing-the-homies.md`).
@@ -64,7 +64,7 @@
 6. Click **Commit changes...**
 
 > **To add an image to a recipe:**
-> 1. Go to the [recipe assets page](https://github.com/JAJM2006/spagetitii/tree/main/src/assets/recipes).
+> 1. Go to the [recipe assets page](https://github.com/JAJM2006/spagetitii/blob/main/templates/recipes.md).
 > 2. Upload your photo and note the filename.
 > 3. Open your recipe file in [/src/content/recipes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/recipes).
 > 4. Click the **Pencil** button and update the image path: `[@assets/profile/<old-file>]` ➔ `[@assets/profile/<new-file>]`.
@@ -73,12 +73,10 @@
 <details>
 <summary><b>How to add a Quote of the Day</b></summary>
 
-1. Copy the [Quotes Template](https://github.com/JAJM2006/spagetitii/templates/quotes).
-2. Navigate to [/src/content/quotes](https://github.com/JAJM2006/spagetitii/tree/main/src/content/quotes).
-3. Click **Add file** ➔ **Create new file**.
-4. Name the file something recognizable (e.g., `inspirational-quote.md`).
-5. Paste and fill out the template.
-6. Click **Commit changes...**
+1. Open [-index.md](https://github.com/JAJM2006/spagetitii/tree/main/src/content/quotes/-index.md).
+2. Click the **Pencil** button (Edit).
+3. Update the content.
+4. Click **Commit changes...**
 </details>
 
 <details>
