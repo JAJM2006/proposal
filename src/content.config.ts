@@ -33,7 +33,7 @@ const about = defineCollection({
     }),
 });
 
-// Hall of Fame (Formerly authors)
+// Hall of Fame (Formerly hall-of-fame)
 const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
@@ -182,7 +182,7 @@ const terms = defineCollection({
 
 export const collections = {
   about,
-  hallOfFame, // <-- renamed from authors
+  hallOfFame, // <-- renamed from hall-of-fame
   vault,      // <-- renamed from blog
   home,
   quotes,     // <-- renamed from indexCards
