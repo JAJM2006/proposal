@@ -16,20 +16,25 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true
   },
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "compile",
+    platformProxy: {
+      enabled: true,
+      configPath: "wrangler.json"
+    }
+  }),
   integrations: [
     react(),
     sitemap(),
-    mdx({
-      remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
-        remarkMath
-      ],
-      rehypePlugins: [[rehypeKatex, {}]]
-    })
+    mdx()
   ],
   markdown: {
+    remarkPlugins: [
+      remarkToc,
+      [remarkCollapse, { test: "Table of contents" }],
+      remarkMath
+    ],
+    rehypePlugins: [[rehypeKatex, {}]],
     shikiConfig: {
       themes: {
         light: "light-plus",
