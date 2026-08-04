@@ -13,14 +13,14 @@ title: Terms & Conditions
 
 ### Content
 
-It is not permitted to mirror or re-publish the content of this website. That includes, for example, the words and images displayed on it. Write your own blog.
+...
 
 ## Terms
 
-1. This site includes matters of opinion and speculation. All material is provided for informational purposes only.
-2. While I try to keep materials up-to-date and accurate, the currency, accuracy, and completeness of my work can not be guaranteed.
-3. You are responsible for whatever happens as a result of you reading or using materials from this site.
-4. These terms and conditions may be amended at any time in the future.
+1. ...
+2. ...
+3. ...
+4. ...
 
 ## Attributions
 
