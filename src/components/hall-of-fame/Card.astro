@@ -1,11 +1,11 @@
 ---
-import type { Hall-of-fameEntry } from "@/types";
+import type { HallOfFameEntry } from "@/types";
 import { plainify } from "@lib/textConverter";
 import { Image } from "astro:assets";
 import Social from "@components/common/Social.astro";
 
 interface Props {
-  entry: Hall-of-fameEntry;
+  entry: HallOfFameEntry;
 }
 
 const { entry }: Props = Astro.props;

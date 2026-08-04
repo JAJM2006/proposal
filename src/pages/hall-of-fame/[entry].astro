@@ -1,12 +1,12 @@
 ---
-import type { Hall-of-fameEntry, vaultEntry } from "@/types";
+import type { HallOfFameEntry, vaultEntry } from "@/types";
 import EntryLayout from "@components/hall-of-fame/EntryLayout.astro";
 import { slugify } from "@lib/textConverter";
 import { getEntries } from "@lib/contentParser";
 import { sortByDate } from "@lib/sortFunctions";
 
 export async function getStaticPaths() {
-  const entries = (await getEntries("hall-of-fame")) as Hall-of-fameEntry[];
+  const entries = (await getEntries("hall-of-fame")) as HallOfFameEntry[];
   const paths = entries.map((entry) => ({
     params: {
       entry: entry.id,
@@ -20,8 +20,8 @@ const { entry } = Astro.props;
 const { title } = entry.data;
 const vaultEntries = (await getEntries("vault", sortByDate)) as vaultEntry[];
 const filteredvaultEntries = vaultEntries.filter(
-  (entry: vaultEntry) =>
-    slugify(entry.data.author?.id ? entry.data.author.id : "Jane Doe") ===
+  (vEntry: vaultEntry) =>
+    slugify(vEntry.data.author?.id ? vEntry.data.author.id : "Jane Doe") ===
     slugify(title)
 );
 ---
