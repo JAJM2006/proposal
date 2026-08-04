@@ -1,5 +1,5 @@
 ---
-title: "Books & Guides
+title: "Books & Guides"
 description: "The reads that reshaped my mindset, daily discipline, and approach to growth."
 ---
 
