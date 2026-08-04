@@ -59,7 +59,7 @@ const vault = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("hallOfFame").optional(),
+      author: reference("hall-of-fame").optional(),
       categories: z
         .array(
           z.enum([
@@ -128,6 +128,18 @@ const quotes = defineCollection({
   }),
 });
 
+// Index Cards (Used by quotes.astro)
+const quotes = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/index-cards",
+  }),
+  schema: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+  }).passthrough(),
+});
+
 // Social Links Hub
 const links = defineCollection({
   loader: glob({
@@ -158,7 +170,7 @@ const recipes = defineCollection({
       date: z.date().optional(),
       image: image().optional(),
       imageAlt: z.string().default(""),
-      author: reference("hallOfFame").optional(),
+      author: reference("hall-of-fame").optional(),
       prepTime: z.number().optional(),
       servings: z.number().optional(),
       calories: z.number().optional(),
@@ -182,12 +194,13 @@ const terms = defineCollection({
 
 export const collections = {
   about,
-  hallOfFame,
+  "hall-of-fame": hallOfFame,
   vault,
   home,
   quotes,
+  quotes,
   links,
   recipes,
-  topPicks,
+  "top-picks": topPicks,
   terms,
 };
