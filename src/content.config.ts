@@ -37,7 +37,7 @@ const about = defineCollection({
 const hallOfFame = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/content/hall-of-fame", // Fixed: Added hyphen to match physical folder
+    base: "./src/content/halloffame", // Fixed: Added hyphen to match physical folder
   }),
   schema: ({ image }) =>
     searchable.extend({
