@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "@components/base/BaseLayout.astro";
-import BlogCard from "@components/vault/Card.astro";
+import VaultCard from "@components/vault/Card.astro";
 import Pagination from "@components/common/Pagination.astro";
 import PageHeader from "@components/common/PageHeader.astro";
-import BlogSidebar from "@components/vault/Sidebar.astro";
+import VaultSidebar from "@components/vault/Sidebar.astro";
 import type { vaultEntry } from "@/types";
 
 interface Props {
@@ -32,12 +32,12 @@ const {
   <section class="section">
     <div class="flex container">
       <div class="row px-0 mx-0 w-full">
-        <!-- blog posts -->
+        <!-- vault posts -->
         <div class="col-12 lg:col-8 lg:p-0">
           {
             entries.map((entry) => (
               <div class="mb-4">
-                <BlogCard entry={entry} />
+                <VaultCard entry={entry} />
               </div>
             ))
           }
@@ -51,7 +51,7 @@ const {
         <div
           class="hidden lg:col-4 lg:flex max-h-static_sidemenu sticky p-0 pl-4 top-[4rem]"
         >
-          <BlogSidebar
+          <VaultSidebar
             tags={tags}
             categories={categories}
             allCategories={allCategories}
