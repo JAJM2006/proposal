@@ -1,12 +1,12 @@
 ---
-import type { HallofFameEntry, vaultEntry } from "@/types";
+import type { Hall-of-fameEntry, vaultEntry } from "@/types";
 import EntryLayout from "@components/hall-of-fame/EntryLayout.astro";
 import { slugify } from "@lib/textConverter";
 import { getEntries } from "@lib/contentParser";
 import { sortByDate } from "@lib/sortFunctions";
 
 export async function getStaticPaths() {
-  const entries = (await getEntries("hallOfFame")) as HallofFameEntry[];
+  const entries = (await getEntries("hall-of-fame")) as Hall-of-fameEntry[];
   const paths = entries.map((entry) => ({
     params: {
       entry: entry.id,

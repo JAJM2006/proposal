@@ -1,11 +1,11 @@
 ---
-import type { HallofFameEntry } from "@/types";
+import type { Hall-of-fameEntry } from "@/types";
 import { plainify } from "@lib/textConverter";
 import { Image } from "astro:assets";
 import Social from "@components/common/Social.astro";
 
 interface Props {
-  entry: HallofFameEntry;
+  entry: Hall-of-fameEntry;
 }
 
 const { entry }: Props = Astro.props;
@@ -30,7 +30,7 @@ const bodyBrief = entry.body ? plainify(entry.body?.slice(0, 100)) : null;
       )
     }
     <h4 class="mb-3">
-      <a href={`/halloffame/${entry.id}`}>{title}</a>
+      <a href={`/hall-of-fame/${entry.id}`}>{title}</a>
     </h4>
     {bodyBrief && <p class="mb-4">{bodyBrief}</p>}
     <Social links={social} />
