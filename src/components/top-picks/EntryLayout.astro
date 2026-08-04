@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "@components/base/BaseLayout.astro";
-import type { DocsEntry, MenuItem } from "@/types";
+import type { TopPicksEntry, MenuItem } from "@/types";
 import Browser from "@components/top-picks/Browser.astro";
 import TableOfContents from "@components/common/TableOfContents.astro";
 import { render } from "astro:content";
 import EntryHeader from "@components/common/EntryHeader.astro";
 
 interface Props {
-  entry: DocsEntry;
+  entry: TopPicksEntry;
   browserMenu: MenuItem[];
 }
 
@@ -52,7 +52,7 @@ if (actuallyHideNav && actuallyHideToc) {
 <BaseLayout title={title} image={image?.src} description={description}>
   <section class="flex container p-4">
     <div class=`max-h-static_sidemenu sticky top-[5rem] mr-4 ${navClass}`>
-      <DocBrowser
+      <Browser
         menu={browserMenu}
         currentPage={entry.id.replace("/-index", "")}
       />
