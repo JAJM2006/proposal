@@ -1,5 +1,5 @@
 ---
-title: "Music and Podcasts
+title: "Music and Podcasts"
 description: "The shows, tunes, and playlists that set the vibe for streams and workouts."
 ---
 
