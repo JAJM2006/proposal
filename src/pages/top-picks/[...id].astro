@@ -1,12 +1,13 @@
 ---
-import type { DocsEntry, MenuItem } from "@/types";
+import type { TopPicksEntry, MenuItem } from "@/types";
 import EntryLayout from "@components/top-picks/EntryLayout.astro";
 import CollectionLayout from "@components/top-picks/CollectionLayout.astro";
 import { getEntries, getEntriesInGroup, getGroups } from "@lib/contentParser";
 import { sortByTitle } from "@lib/sortFunctions";
 
 export async function getStaticPaths() {
-  const entries = (await getEntries("docs", sortByTitle)) as TopPicksEntry[];
+  // Changed "docs" -> "top-picks"
+  const entries = (await getEntries("top-picks", sortByTitle)) as TopPicksEntry[];
 
   const paths = entries.map((entry) => {
     const segments = entry.id.replace("/-index", "").split("/");
@@ -33,7 +34,7 @@ const groupEntries = isGroup
   ? ((await getEntriesInGroup("top-picks", groupName, sortByTitle)) as TopPicksEntry[])
   : [];
 
-// Construct Doc Browser menu
+// Construct Top Picks Browser menu
 const browserMenu: MenuItem[] = [];
 const groups = (await getGroups("top-picks", sortByTitle)) as TopPicksEntry[];
 await Promise.all(
