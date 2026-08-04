@@ -113,19 +113,20 @@ const indexCards = defineCollection({
   }),
 });
 
-// Re-purposed for Social Links Hub (Renamed from portfolio)
+// Re-purposed for Social Links Hub
 const links = defineCollection({
   loader: glob({
     pattern: "-index.{md,mdx}",
     base: "./src/content/links",
   }),
   schema: searchable.extend({
-    projects: z.array(
+    platforms: z.array(
       z.object({
+        name: z.string(),
         title: z.string(),
-        link: z.string().optional(),
-        technologies: z.array(z.string()).optional(),
-        content: z.array(z.string()).optional(),
+        link: z.string(),
+        description: z.string(),
+        highlights: z.array(z.string()).optional(),
       }),
     ),
   }),
@@ -171,7 +172,7 @@ export const collections = {
   docs,
   home,
   indexCards,
-  links, // <-- updated export
+  links,
   recipes,
   terms,
 };
