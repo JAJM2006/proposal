@@ -13,6 +13,7 @@ export type PoetryEntry = CollectionEntry<"poetry">;
 export type LinksEntry = CollectionEntry<"links">;
 export type RecipesEntry = CollectionEntry<"recipes">;
 export type TermsEntry = CollectionEntry<"terms">;
+export type TopPicksEntry = CollectionEntry<"top-picks">;
 
 export type SearchableEntry =
   | AboutEntry
@@ -22,7 +23,8 @@ export type SearchableEntry =
   | PoetryEntry
   | LinksEntry
   | RecipesEntry
-  | TermsEntry;
+  | TermsEntry
+  | TopPicksEntry;
 
 export type SocialLinks = {
   discord?: string;
