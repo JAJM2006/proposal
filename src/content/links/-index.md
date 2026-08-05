@@ -12,15 +12,6 @@ platforms:
       - "Real-time stream chat interactions and Q&As"
       - "Community game nights and channel point rewards"
 
-  - name: "Discord"
-    title: "Spagetitii's Meatballs"
-    link: "https://discord.spagetitii.com"
-    description: "Community, and growth all over the globe."
-    highlights:
-      - "Be part of a community of word changers"
-      - "Be the first to know when schedules change"
-      - "Cooking clips and pet pics"
-
   - name: "Instagram"
     title: "Behind the Scenes & Daily Mindset"
     link: "https://ig.spagetitii.com"
@@ -29,4 +20,22 @@ platforms:
       - "Daily stories and lifestyle content"
       - "Fitness progress photos and workout clips"
       - "Mindset thoughts and setup aesthetics"
+
+  - name: "YouTube"
+    title: "Vods, Highlights & Deep Dives"
+    link: "https://yt.spagetitii.com"
+    description: "Long-form content, edited stream highlights, setup tours, and fitness guides."
+    highlights:
+      - "Edited stream highlights and gaming VODs"
+      - "Detailed fitness guides and setup breakdowns"
+      - "Cooking walkthroughs and full-length videos"
+
+  - name: "Discord"
+    title: "Community Discord"
+    link: "https://discord.spagetitii.com"
+    description: "Join the spagetitii community server for chat and updates."
+    highlights:
+      - "Community chat"
+      - "Stream notifications"
+      - "Events & giveaways"
 ---
