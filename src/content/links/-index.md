@@ -19,7 +19,7 @@ platforms:
     highlights:
       - "Community chat"
       - "Stream notifications"
-      - "Events & giveaways"
+      - "Cooking photos and pet pics"
 
   - name: "Instagram"
     title: "Behind the Scenes & Daily Mindset"
