@@ -12,15 +12,6 @@ platforms:
       - "Real-time stream chat interactions and Q&As"
       - "Community game nights and channel point rewards"
 
-  - name: "Instagram"
-    title: "Behind the Scenes & Daily Mindset"
-    link: "https://ig.spagetitii.com"
-    description: "Quick daily updates, fitness progress, setup snaps, and behind-the-scenes stories."
-    highlights:
-      - "Daily stories and lifestyle content"
-      - "Fitness progress photos and workout clips"
-      - "Mindset thoughts and setup aesthetics"
-
   - name: "Discord"
     title: "Community Discord"
     link: "https://discord.spagetitii.com"
@@ -29,4 +20,13 @@ platforms:
       - "Community chat"
       - "Stream notifications"
       - "Events & giveaways"
+
+  - name: "Instagram"
+    title: "Behind the Scenes & Daily Mindset"
+    link: "https://ig.spagetitii.com"
+    description: "Quick daily updates, fitness progress, setup snaps, and behind-the-scenes stories."
+    highlights:
+      - "Daily stories and lifestyle content"
+      - "Fitness progress photos and workout clips"
+      - "Mindset thoughts and setup aesthetics"
 ---
