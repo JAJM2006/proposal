@@ -21,15 +21,6 @@ platforms:
       - "Fitness progress photos and workout clips"
       - "Mindset thoughts and setup aesthetics"
 
-  - name: "YouTube"
-    title: "Vods, Highlights & Deep Dives"
-    link: "https://yt.spagetitii.com"
-    description: "Long-form content, edited stream highlights, setup tours, and fitness guides."
-    highlights:
-      - "Edited stream highlights and gaming VODs"
-      - "Detailed fitness guides and setup breakdowns"
-      - "Cooking walkthroughs and full-length videos"
-
   - name: "Discord"
     title: "Community Discord"
     link: "https://discord.spagetitii.com"
